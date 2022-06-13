@@ -1,0 +1,19 @@
+{
+  "name": "@sample/lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devtatsu/study-react-libraries.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devtatsu/study-react-libraries/issues"
+  },
+  "homepage": "https://github.com/devtatsu/study-react-libraries#readme"
+}
