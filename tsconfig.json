@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -19,13 +19,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "strict": true,
-    // 参考 https://qiita.com/yoshiwo/items/07b053541ecb54eda576
-    // 参考 https://fumiononaka.com/Business/html5/FN2106001.html
-    // add start nullとundefinedなどの厳格なチェックを無効にする設定
-    // "strictNullChecks": false, // これは、デフォルト'true'
-    // add end
   },
-  "include": [
-    "src"
+  "exclude": [
+    "node_modules"
   ]
 }
