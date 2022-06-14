@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const sample = () => {
+export const Sample: React.FC = () => {
 	return (
 		<div>
 			sample test comp
