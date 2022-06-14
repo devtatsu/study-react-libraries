@@ -4,7 +4,7 @@ const BASE_URL = 'http://localhost:9090/';
 // https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch
 // https://qiita.com/legokichi/items/801e88462eb5c84af97d
 
-const api = {
+export const ApiService = {
 
 	get: async <T extends Object>(url: string, arrayName: string): Promise<T> => {
 
@@ -73,7 +73,7 @@ const api = {
 			.then((e) => handleErrors(e));
 	}
 
-}
+};
 
 const handleErrors = async (res: Response) => {
 
@@ -100,4 +100,3 @@ const handleErrors = async (res: Response) => {
 	}
 };
 
-export default api
