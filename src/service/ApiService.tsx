@@ -4,75 +4,26 @@ const BASE_URL = 'http://localhost:9090/';
 // https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch
 // https://qiita.com/legokichi/items/801e88462eb5c84af97d
 
-export const ApiService = {
+export const ApiService = async<T extends Object>(url: string, arrayName: string): Promise<T> => {
 
-	get: async <T extends Object>(url: string, arrayName: string): Promise<T> => {
-
-		return await fetch(BASE_URL + url, {
-			method: 'GET',
-			mode: 'cors',
-			headers: {
-				'Content-Type': 'application/json'
-			}
+	return await fetch(BASE_URL + url, {
+		method: 'GET',
+		mode: 'cors',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	})
+		.catch((e) => {
+			console.error('ERROR: ' + e);
+			throw Error(e);
 		})
-			.catch((e) => {
-				console.error('ERROR: ' + e);
-				throw Error(e);
+		.then((e) => handleErrors(e))
+		.then(res => res.json()
+			.then((json: any) => {
+				console.log(json[arrayName])
+				return json[arrayName];
 			})
-			.then((e) => handleErrors(e))
-			.then(res => res.json()
-				.then((json: any) => {
-					console.log(json[arrayName])
-					return json[arrayName];
-				})
-			);
-	},
-
-	post: async <T extends Object>(url: string, data: T) => {
-
-		console.log('JSON BODY: ' + JSON.stringify(data))
-
-		fetch(BASE_URL + url, {
-			method: 'POST',
-			mode: 'cors',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			redirect: 'follow',
-			referrerPolicy: 'no-referrer',
-			body: JSON.stringify(data)
-		})
-			.catch((e) => {
-				console.error('ERROR: ' + e);
-				throw Error(e);
-			})
-			.then((e) => handleErrors(e));
-
-	},
-
-	put: async <T extends Object>(url: string, data: T) => {
-
-		console.log('JSON BODY: ' + JSON.stringify(data))
-
-		return fetch(BASE_URL + url, {
-			method: 'PUT',
-			mode: 'cors',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			redirect: 'follow',
-			referrerPolicy: 'no-referrer',
-			body: JSON.stringify(data)
-		})
-			.catch((e) => {
-				console.error('ERROR: ' + e);
-				throw Error(e);
-			})
-			.then((e) => handleErrors(e));
-	}
-
+		);
 };
 
 const handleErrors = async (res: Response) => {
