@@ -10,16 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/devtatsu/study-react-libraries.git"
   },
+  "keywords": [],
   "author": "",
-  "license": "UNLICENSED",
-  "peerDependencies": {
-    "typescript": "4"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.3"
   },
-  "bugs": {
-    "url": "https://github.com/devtatsu/study-react-libraries/issues"
-  },
-  "homepage": "https://github.com/devtatsu/study-react-libraries#readme",
   "dependencies": {
-    "react": "^18.1.0"
+    "npx": "^10.2.2"
   }
 }
