@@ -9,7 +9,7 @@ const autoprefixer = require('autoprefixer');
 const conf = {
 	input: 'src/index.tsx',
 	output: {
-		file: `dist/index.cjs.js`,
+		file: `dist/index.js`,
 		format: "cjs",
 		exports: "auto"
 	},
