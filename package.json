@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "test module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/devtatsu/study-react-libraries#readme",
   "dependencies": {
     "@babel/runtime": "^7.18.3",
+    "npx": "^10.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -43,11 +45,12 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "react": "^18.1.0",
     "rollup": "^2.75.6",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-sourcemaps": "^0.6.3",
     "rollup-plugin-styles": "^4.0.0",
-    "react": "^18.1.0",
     "typescript": "^4.7.3"
-  }
+  },
+  "private": true
 }
