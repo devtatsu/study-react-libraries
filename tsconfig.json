@@ -6,11 +6,13 @@
 		"declaration": true,
 		"newLine": "lf",
 		"pretty": true,
-		"outDir": "./dist",
+		"outDir": "./build",
 		"strict": true,
 		"skipLibCheck": true,
 		"jsx": "react",
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"rootDir": "./src",
+		"sourceMap": true,
 	},
 	"include": [
 		"src/*"
